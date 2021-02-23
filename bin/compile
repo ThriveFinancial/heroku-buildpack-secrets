@@ -26,9 +26,8 @@ function indent() {
 
 # config
 
-AWS_CLI_URL="https://s3.amazonaws.com/aws-cli/awscli-bundle.zip"
+AWS_CLI_URL="https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" 
 JQ_VERSION="jq-1.6"
-
 JQ_URL="https://github.com/stedolan/jq/releases/download/$JQ_VERSION/jq-linux64"
 
 BUILD_DIR=$1
@@ -54,7 +53,7 @@ if [ "$INSTALL_DIR" != "$BUILD_DIR/.awscli" ] && [ -e $INSTALL_DIR ]; then
   mv $INSTALL_DIR /tmp/awscli
 fi
 
-"$BUILD_DIR/.awscli/awscli-bundle/install" -i "$INSTALL_DIR" |& indent
+"$BUILD_DIR/.awscli/awscli-bundle/install" --install-dir "${INSTALL_DIR}/aws-cli" --bin-dir "${INSTALL_DIR}/bin" |& indent
 
 if [ "$INSTALL_DIR" != "$BUILD_DIR/.awscli" ]; then
   mv $INSTALL_DIR/* "$BUILD_DIR/.awscli"
