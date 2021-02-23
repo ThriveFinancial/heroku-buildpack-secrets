@@ -83,6 +83,7 @@ SECRETS=$($HOME/.awscli/bin/aws iam get-user --query User.Tags[].Key --output te
 for secret in $SECRETS
 do
   {
+    echo $secret
     parsed=$($HOME/.awscli/bin/aws secretsmanager get-secret-value --secret-id "$secret" --query SecretString --output text | $HOME/.jq/jq -r 'to_entries[] | "export \(.key)=\"\(.value)\";"')
     eval $parsed
   }
