@@ -41,7 +41,7 @@ INSTALL_DIR="/app/.awscli"
 
 echo "-----> Installing AWS CLI"
 curl --silent --show-error -o /tmp/awscli-bundle.zip "$AWS_CLI_URL" |& indent
-mkdir 
+# mkdir 
 unzip -qq -d "$BUILD_DIR/.awscli" /tmp/awscli-bundle.zip |& indent
 ls $BUILD_DIR
 
