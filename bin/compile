@@ -77,7 +77,7 @@ mkdir -p $BUILD_DIR/.profile.d
 
 cat > "$BUILD_DIR/.profile.d/awscli.sh" <<'PROFILE'
 ## Fetch all secrets
-SECRETS=$($HOME/.awscli/bin/python $HOME/.awscli/bin/aws iam get-user --query User.Tags[].Key --output text)
+SECRETS=$($HOME/.awscli/bin/aws iam get-user --query User.Tags[].Key --output text)
 
 ## Get individual secrets
 for secret in $SECRETS
