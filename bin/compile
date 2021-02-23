@@ -57,7 +57,7 @@ fi
 
 ls -la $BUILD_DIR/.awscli
 
-"$BUILD_DIR/.awscli/install" --install-dir "${INSTALL_DIR}/aws-cli" --bin-dir "${INSTALL_DIR}/bin" |& indent
+"$BUILD_DIR/.awscli/aws/install" --install-dir "${INSTALL_DIR}/aws-cli" --bin-dir "${INSTALL_DIR}/bin" |& indent
 # ls /tmp/
 
 if [ "$INSTALL_DIR" != "$BUILD_DIR/.awscli" ]; then
