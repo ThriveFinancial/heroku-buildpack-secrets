@@ -55,6 +55,7 @@ fi
 
 echo "here"
 "$BUILD_DIR/.awscli/awscli-bundle/install" --install-dir "${INSTALL_DIR}/aws-cli" --bin-dir "${INSTALL_DIR}/bin" |& indent
+echo "here2"
 
 if [ "$INSTALL_DIR" != "$BUILD_DIR/.awscli" ]; then
   mv $INSTALL_DIR/* "$BUILD_DIR/.awscli"
