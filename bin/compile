@@ -43,7 +43,7 @@ echo "-----> Installing AWS CLI"
 curl --silent --show-error -o /tmp/awscli-bundle.zip "$AWS_CLI_URL" |& indent
 # mkdir 
 unzip -qq -d "$BUILD_DIR/.awscli" /tmp/awscli-bundle.zip |& indent
-ls $BUILD_DIR
+ls -la $BUILD_DIR
 
 # Since build-dir isn't guaranteed to be /app, move whatever's in /app's awscli
 # dir out of the way. The installer uses virtualenv, which means it must be
